@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"tags";s:64:"365_CATALOG_PRODUCT_PRICES,365_LAYOUT_GENERAL_CACHE_TAG,365_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490896733;s:6:"expire";i:9999999999;s:4:"tags";s:64:"365_CATALOG_PRODUCT_PRICES,365_LAYOUT_GENERAL_CACHE_TAG,365_MAGE";}
 <block class="Magento\Framework\Pricing\Render\RendererPool" name="render.product.prices">
    <arguments>
       <argument name="default" xsi:type="array">
@@ -30,18 +30,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"t
 </block>
 <referenceBlock name="render.product.prices">
    <arguments>
-      <argument name="default" xsi:type="array">
-         <item name="prices" xsi:type="array">
-            <item name="msrp_price" xsi:type="array">
-               <item name="render_class" xsi:type="string">Magento\Catalog\Pricing\Render\PriceBox</item>
-               <item name="render_template" xsi:type="string">Magento_Msrp::product/price/msrp.phtml</item>
-            </item>
-         </item>
-      </argument>
-   </arguments>
-</referenceBlock>
-<referenceBlock name="render.product.prices">
-   <arguments>
       <argument name="bundle" xsi:type="array">
          <item name="prices" xsi:type="array">
             <item name="tier_price" xsi:type="array">
@@ -60,11 +48,11 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"t
 </referenceBlock>
 <referenceBlock name="render.product.prices">
    <arguments>
-      <argument name="grouped" xsi:type="array">
+      <argument name="default" xsi:type="array">
          <item name="prices" xsi:type="array">
-            <item name="final_price" xsi:type="array">
-               <item name="render_class" xsi:type="string">Magento\Catalog\Pricing\Render\FinalPriceBox</item>
-               <item name="render_template" xsi:type="string">Magento_GroupedProduct::product/price/final_price.phtml</item>
+            <item name="msrp_price" xsi:type="array">
+               <item name="render_class" xsi:type="string">Magento\Catalog\Pricing\Render\PriceBox</item>
+               <item name="render_template" xsi:type="string">Magento_Msrp::product/price/msrp.phtml</item>
             </item>
          </item>
       </argument>
@@ -77,6 +65,18 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"t
             <item name="final_price" xsi:type="array">
                <item name="render_class" xsi:type="string">Magento\ConfigurableProduct\Pricing\Render\FinalPriceBox</item>
                <item name="render_template" xsi:type="string">Magento_ConfigurableProduct::product/price/final_price.phtml</item>
+            </item>
+         </item>
+      </argument>
+   </arguments>
+</referenceBlock>
+<referenceBlock name="render.product.prices">
+   <arguments>
+      <argument name="default" xsi:type="array">
+         <item name="prices" xsi:type="array">
+            <item name="wishlist_configured_price" xsi:type="array">
+               <item name="render_class" xsi:type="string">Magento\Wishlist\Pricing\Render\ConfiguredPriceBox</item>
+               <item name="render_template" xsi:type="string">Magento_Catalog::product/price/configured_price.phtml</item>
             </item>
          </item>
       </argument>
@@ -126,11 +126,11 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"t
 </referenceBlock>
 <referenceBlock name="render.product.prices">
    <arguments>
-      <argument name="default" xsi:type="array">
+      <argument name="grouped" xsi:type="array">
          <item name="prices" xsi:type="array">
-            <item name="wishlist_configured_price" xsi:type="array">
-               <item name="render_class" xsi:type="string">Magento\Wishlist\Pricing\Render\ConfiguredPriceBox</item>
-               <item name="render_template" xsi:type="string">Magento_Catalog::product/price/configured_price.phtml</item>
+            <item name="final_price" xsi:type="array">
+               <item name="render_class" xsi:type="string">Magento\Catalog\Pricing\Render\FinalPriceBox</item>
+               <item name="render_template" xsi:type="string">Magento_GroupedProduct::product/price/final_price.phtml</item>
             </item>
          </item>
       </argument>

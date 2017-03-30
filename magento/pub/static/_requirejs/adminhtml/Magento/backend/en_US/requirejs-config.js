@@ -1,7 +1,7 @@
 (function(require){
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -71,7 +71,7 @@ require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -136,23 +136,7 @@ require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-/*eslint no-unused-vars: 0*/
-var config = {
-    map: {
-        '*': {
-            'mediaUploader':  'Magento_Backend/js/media-uploader'
-        }
-    }
-};
-
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -168,11 +152,28 @@ var config = {
         }
     } 
 };
+
 require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/*eslint no-unused-vars: 0*/
+var config = {
+    map: {
+        '*': {
+            'mediaUploader':  'Magento_Backend/js/media-uploader'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -184,11 +185,12 @@ var config = {
         }
     }
 };
+
 require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -199,11 +201,12 @@ var config = {
         }
     }
 };
+
 require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -222,56 +225,12 @@ var config = {
         'Magento_Catalog/catalog/product'
     ]
 };
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
 
-var config = {
-    map: {
-        '*': {
-            requireCookie: 'Magento_Cookie/js/require-cookie'
-        }
-    } 
-};
 require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
-    map: {
-        '*': {
-            rolesTree: 'Magento_User/js/roles-tree'
-        }
-    } 
-};
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
-    map: {
-        '*': {
-            orderEditDialog: 'Magento_Sales/order/edit/message'
-        }
-    }
-};
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -297,7 +256,103 @@ require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            orderEditDialog: 'Magento_Sales/order/edit/message'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            requireCookie: 'Magento_Cookie/js/require-cookie'
+        }
+    } 
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            transparent: 'Magento_Payment/transparent'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            testConnection: 'Magento_AdvancedSearch/js/testconnection'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            rolesTree: 'Magento_User/js/roles-tree'
+        }
+    } 
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            fptAttribute: 'Magento_Weee/js/fpt-attribute'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -308,11 +363,12 @@ var config = {
         }
     }
 };
+
 require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 /*eslint no-unused-vars: 0*/
@@ -329,7 +385,42 @@ require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/*eslint-disable */
+
+var config = {
+    map: {
+        '*': {
+            uiAlert: 'Magento_Ui/js/modal/alert',
+            uiPrompt: 'Magento_Ui/js/modal/prompt'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
+    map: {
+        '*': {
+            transparent:            'Magento_Payment/transparent'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 /*eslint no-unused-vars: 0*/
@@ -346,22 +437,7 @@ require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
-    map: {
-        '*': {
-            transparent:            'Magento_Payment/transparent'
-        }
-    }
-};
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -372,11 +448,12 @@ var config = {
         }
     } 
 };
+
 require.config(config);
 })();
 (function() {
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -389,21 +466,6 @@ var config = {
     }
 };
 
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
-    map: {
-        '*': {
-            fptAttribute: 'Magento_Weee/js/fpt-attribute'
-        }
-    }
-};
 require.config(config);
 })();
 

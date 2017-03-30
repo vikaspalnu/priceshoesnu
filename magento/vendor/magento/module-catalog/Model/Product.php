@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Catalog\Model;
@@ -1905,14 +1905,18 @@ class Product extends \Magento\Catalog\Model\AbstractModel implements
      */
     public function getOptionById($optionId)
     {
-        /** @var \Magento\Catalog\Model\Product\Option $option */
-        foreach ($this->getOptions() as $option) {
-            if ($option->getId() == $optionId) {
-                return $option;
+        $result = null;
+        if (is_array($this->getOptions())) {
+            /** @var \Magento\Catalog\Model\Product\Option $option */
+            foreach ($this->getOptions() as $option) {
+                if ($option->getId() == $optionId) {
+                    $result = $option;
+                    break;
+                }
             }
         }
 
-        return null;
+        return $result;
     }
 
     /**
@@ -2612,6 +2616,7 @@ class Product extends \Magento\Catalog\Model\AbstractModel implements
     /**
      * Set the associated products
      * @param array $productIds
+     * @return void
      */
     public function setAssociatedProductIds(array $productIds)
     {

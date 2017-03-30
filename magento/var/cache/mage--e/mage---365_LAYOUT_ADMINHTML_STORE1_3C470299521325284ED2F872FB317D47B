@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768563;s:6:"expire";i:9999999999;s:4:"tags";s:74:"365_DEFAULT,365_ADMINHTML_AUTH_LOGIN,365_LAYOUT_GENERAL_CACHE_TAG,365_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490898420;s:6:"expire";i:9999999999;s:4:"tags";s:74:"365_DEFAULT,365_ADMINHTML_AUTH_LOGIN,365_LAYOUT_GENERAL_CACHE_TAG,365_MAGE";}
 <head>
    <title>Magento Admin</title>
    <meta name="viewport" content="width=1024"/>
@@ -92,8 +92,20 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768563;s:6:"expire";i:9999999999;s:4:"t
    </referenceContainer>
 </body>
 <body>
+   <referenceBlock name="footer">
+      <action method="setBugreportUrl">
+         <argument name="url" xsi:type="string">https://support.varien.com/</argument>
+      </action>
+   </referenceBlock>
+</body>
+<body>
    <referenceContainer name="legal.system">
       <block class="Magento\Framework\View\Element\Template" name="session.activity.link" template="Magento_Security::page/activity_link.phtml" before="report" ifconfig="admin/security/admin_account_sharing"/>
+   </referenceContainer>
+</body>
+<body>
+   <referenceContainer name="notifications">
+      <block class="Magento\GoogleTagManager\Block\Adminhtml\Ga" name="google_analyticsuniversal" as="google_analyticsuniversal" template="Magento_GoogleTagManager::ga.phtml"/>
    </referenceContainer>
 </body>
 <head>
@@ -115,6 +127,13 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768563;s:6:"expire";i:9999999999;s:4:"t
    <move element="user" before="-" destination="header.inner.right"/>
    <move element="notification.messages" after="user" destination="header.inner.right"/>
    <move element="global.search" after="notification.messages" destination="header.inner.right"/>
+</body>
+<body>
+   <referenceBlock name="logo">
+      <arguments>
+         <argument name="edition" xsi:type="string">Enterprise</argument>
+      </arguments>
+   </referenceBlock>
 </body>
 <head>
    <remove src="css/styles-old.css"/>
@@ -154,11 +173,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768563;s:6:"expire";i:9999999999;s:4:"t
    </referenceContainer>
 </body>
 <body>
-   <referenceContainer name="form.buttons">
-      <block class="Magento\Backend\Block\Template" name="adminhtml_auth_login_forgotpassword" template="Magento_User::admin/forgotpassword_url.phtml"/>
-   </referenceContainer>
-</body>
-<body>
    <referenceContainer name="form.additional.info">
       <block class="Magento\Captcha\Block\Captcha" name="captcha" cacheable="false">
          <action method="setFormId">
@@ -171,5 +185,10 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768563;s:6:"expire";i:9999999999;s:4:"t
             <argument name="width" xsi:type="string">50</argument>
          </action>
       </block>
+   </referenceContainer>
+</body>
+<body>
+   <referenceContainer name="form.buttons">
+      <block class="Magento\Backend\Block\Template" name="adminhtml_auth_login_forgotpassword" template="Magento_User::admin/forgotpassword_url.phtml"/>
    </referenceContainer>
 </body>

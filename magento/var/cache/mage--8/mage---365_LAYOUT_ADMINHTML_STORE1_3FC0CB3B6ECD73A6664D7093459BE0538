@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"tags";s:75:"365_DEFAULT,365_ADMINHTML_CACHE_INDEX,365_LAYOUT_GENERAL_CACHE_TAG,365_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490896733;s:6:"expire";i:9999999999;s:4:"tags";s:75:"365_DEFAULT,365_ADMINHTML_CACHE_INDEX,365_LAYOUT_GENERAL_CACHE_TAG,365_MAGE";}
 <head>
    <title>Magento Admin</title>
    <meta name="viewport" content="width=1024"/>
@@ -92,8 +92,20 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"t
    </referenceContainer>
 </body>
 <body>
+   <referenceBlock name="footer">
+      <action method="setBugreportUrl">
+         <argument name="url" xsi:type="string">https://support.varien.com/</argument>
+      </action>
+   </referenceBlock>
+</body>
+<body>
    <referenceContainer name="legal.system">
       <block class="Magento\Framework\View\Element\Template" name="session.activity.link" template="Magento_Security::page/activity_link.phtml" before="report" ifconfig="admin/security/admin_account_sharing"/>
+   </referenceContainer>
+</body>
+<body>
+   <referenceContainer name="notifications">
+      <block class="Magento\GoogleTagManager\Block\Adminhtml\Ga" name="google_analyticsuniversal" as="google_analyticsuniversal" template="Magento_GoogleTagManager::ga.phtml"/>
    </referenceContainer>
 </body>
 <head>
@@ -115,6 +127,13 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1490768512;s:6:"expire";i:9999999999;s:4:"t
    <move element="user" before="-" destination="header.inner.right"/>
    <move element="notification.messages" after="user" destination="header.inner.right"/>
    <move element="global.search" after="notification.messages" destination="header.inner.right"/>
+</body>
+<body>
+   <referenceBlock name="logo">
+      <arguments>
+         <argument name="edition" xsi:type="string">Enterprise</argument>
+      </arguments>
+   </referenceBlock>
 </body>
 <body>
    <block class="Magento\Backend\Block\Admin\Formkey" name="formkey" as="formkey" template="Magento_Backend::admin/formkey.phtml"/>

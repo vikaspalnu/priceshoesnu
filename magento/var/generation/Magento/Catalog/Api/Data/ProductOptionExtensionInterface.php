@@ -40,6 +40,17 @@ interface ProductOptionExtensionInterface extends \Magento\Framework\Api\Extensi
     public function setDownloadableOption(\Magento\Downloadable\Api\Data\DownloadableOptionInterface $downloadableOption);
 
     /**
+     * @return \Magento\GiftCard\Api\Data\GiftCardOptionInterface|null
+     */
+    public function getGiftcardItemOption();
+
+    /**
+     * @param \Magento\GiftCard\Api\Data\GiftCardOptionInterface $giftcardItemOption
+     * @return $this
+     */
+    public function setGiftcardItemOption(\Magento\GiftCard\Api\Data\GiftCardOptionInterface $giftcardItemOption);
+
+    /**
      * @return \Magento\ConfigurableProduct\Api\Data\ConfigurableItemOptionValueInterface[]|null
      */
     public function getConfigurableItemOptions();

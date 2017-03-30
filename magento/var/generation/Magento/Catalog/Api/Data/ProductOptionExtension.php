@@ -61,6 +61,24 @@ class ProductOptionExtension extends \Magento\Framework\Api\AbstractSimpleObject
     }
 
     /**
+     * @return \Magento\GiftCard\Api\Data\GiftCardOptionInterface|null
+     */
+    public function getGiftcardItemOption()
+    {
+        return $this->_get('giftcard_item_option');
+    }
+
+    /**
+     * @param \Magento\GiftCard\Api\Data\GiftCardOptionInterface $giftcardItemOption
+     * @return $this
+     */
+    public function setGiftcardItemOption(\Magento\GiftCard\Api\Data\GiftCardOptionInterface $giftcardItemOption)
+    {
+        $this->setData('giftcard_item_option', $giftcardItemOption);
+        return $this;
+    }
+
+    /**
      * @return \Magento\ConfigurableProduct\Api\Data\ConfigurableItemOptionValueInterface[]|null
      */
     public function getConfigurableItemOptions()

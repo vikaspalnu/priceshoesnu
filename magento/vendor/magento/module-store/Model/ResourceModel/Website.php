@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -13,11 +13,6 @@ namespace Magento\Store\Model\ResourceModel;
  */
 class Website extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
-    /**
-     * @var array
-     */
-    private $websitesCache;
-
     /**
      * Define main table
      *
@@ -40,17 +35,23 @@ class Website extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     }
 
     /**
-     * Read information about all websites
+     * Read all information about websites. Convert information to next format:
+     * [website_code => [website_data (website_id, code, name, etc...)]]
      *
      * @return array
      */
     public function readAllWebsites()
     {
+        $websites = [];
         $select = $this->getConnection()
             ->select()
             ->from($this->getTable('store_website'));
 
-        return $this->getConnection()->fetchAll($select);
+        foreach($this->getConnection()->fetchAll($select) as $websiteData) {
+            $websites[$websiteData['code']] = $websiteData;
+        }
+
+        return $websites;
     }
 
     /**
