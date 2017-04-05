@@ -8,13 +8,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-		<css src="css/styles.css"/>
         <css src="css/bootstrap.css"/>
         <css src="css/swiper.css"/>
         <link src="js/jquery.js"/>
         <link src="js/bootstrap.min.js"/>
         <link src="js/swiper.min.js"/>
         <link src="js/script.js"/>
-        
+        <css src="css/styles.css"/>
         </head>
 </page>

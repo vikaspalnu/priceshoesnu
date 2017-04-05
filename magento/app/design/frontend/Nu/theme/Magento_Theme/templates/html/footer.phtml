@@ -7,13 +7,85 @@
 // @codingStandardsIgnoreFile
 
 ?>
-<div class="footer-container">
-    <div class="footer">
-        <?php echo $block->getChildHtml() ?>
-        <p class="bugs"><?php /* @escapeNotVerified */ echo __('Help Us Keep Magento Healthy') ?> - <a
-            href="http://www.magentocommerce.com/bug-tracking"
-            target="_blank"><strong><?php /* @escapeNotVerified */ echo __('Report All Bugs') ?></strong></a>
-        </p>
-        <address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
+    <div class="footer-container container">
+        <div class="footer">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="col-md-2">
+                        <h1 class="footer-title">Informaction Corporative</h1>
+                        <div class="footer-paragraph">
+                            <p>Quiens somas</p>
+                            <p>Socialmente responsable</p>
+                            <p>Directorio Oficinas y CEDIS</p>
+                            <p>Bolsa de trabajo</p>
+                            <p>Proveedores</p>
+                            <p>Logotipos Price Shoes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h1 class="footer-title">Atencion AlCliente</h1>
+                        <div class="footer-paragraph">
+                            <p>Quiens somas</p>
+                            <p>Socialmente responsable</p>
+                            <p>Directorio Oficinas y CEDIS</p>
+                            <p>Bolsa de trabajo</p>
+                            <p>Proveedores</p>
+                            <p>Logotipos Price Shoes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h1 class="footer-title">Servicio AlSocio</h1>
+                        <div class="footer-paragraph">
+                            <p>Quiens somas</p>
+                            <p>Socialmente responsable</p>
+                            <p>Directorio Oficinas y CEDIS</p>
+                            <p>Bolsa de trabajo</p>
+                            <p>Proveedores</p>
+                            <p>Logotipos Price Shoes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h1 class="footer-title">Herramientas Para el socio</h1>
+                        <div class="footer-paragraph">
+                            <p>Guia de medidas ytallas</p>
+                            <p>Catalogos Virtuales</p>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <h1 class="footer-title theme-pink">Contactanos</h1>
+                     
+                           <form class="form-inline">
+                                <div class="form-group">
+                                    <label class="theme-pink form-title">sucribete a nuestro boletin</label>
+                                    <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Ingresa tu e-mail">
+                                    <div class="input-group-addon">ENVIAR</div>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="theme-pink form-title">Siguenos en:</p>
+                            <div class="social">
+                                <img class="social-icon" src="<?php echo $this->getViewFileUrl('images/fb.png'); ?>">
+                                <img class="social-icon" src="<?php echo $this->getViewFileUrl('images/tw.png'); ?>">
+                                <img class="social-icon" src="<?php echo $this->getViewFileUrl('images/bl.png'); ?>">
+                                <img class="social-icon" src="<?php echo $this->getViewFileUrl('images/in.png'); ?>">
+                                <img class="social-icon" src="<?php echo $this->getViewFileUrl('images/pi.png'); ?>">
+                            </div>
+                        </div>
+                   
+                </div>
+                 </div>
+                 </div>
+                <div class="footer-copy">
+                    <p>Todos los derechos reservados 2016</p>
+                    <p>Conoce nuestro <a>Aviso de privacidad</a></p>
+                    <p><a>Terrinos y Condiciones</a></p>
+                </div>
+           
+            <?php echo $block->getChildHtml() ?>
+           <!-- <p class="bugs">
+                <?php /* @escapeNotVerified */// echo __('Help Us Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" target="_blank"><strong><?php /* @escapeNotVerified */ echo __('Report All Bugs') ?></strong></a>
+            </p>
+            <address><?php /* @escapeNotVerified */ // echo $block->getCopyright() ?></address>-->
+        
     </div>
-</div>

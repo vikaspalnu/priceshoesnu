@@ -13,7 +13,7 @@
  *
  * @see \Magento\Theme\Block\Html\Topmenu
  */
-?>
+?><h1>hi</h1>
 <?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
 <?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
 
@@ -22,4 +22,4 @@
         <?php /* @escapeNotVerified */ echo $_menu; ?>
     </ul>
 </nav>
-<?php echo $block->getChildHtml('navtopSearch'); ?>
+<?php //echo $block->getChildHtml('navtopSearch'); ?>
