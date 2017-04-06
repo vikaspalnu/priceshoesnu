@@ -1,0 +1,133 @@
+<?php  
+
+   $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+   $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+   $categoryId = $category->getId();
+   $categoryFactory = $objectManager->create('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+   $_categoriescollection     = $categoryFactory->create()->addAttributeToSelect('*');   
+   $_categoryHelper =$objectManager->get('Magento\Catalog\Helper\Category');
+   $_categories = $_categoriescollection->addAttributeToFilter('parent_id', $categoryId);
+
+
+	 //$block->getCategory($_category)->getImageUrl();
+    ?>
+	<div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-2 cat-list">
+                    <h2 class="cat-title"><?php echo $category->getName(); ?></h2>
+				<?php foreach ($_categories as $_category):  
+				if (!$_category->getIsActive()) {
+				continue;
+				}?>
+				<div class="main-cat">
+                       <a href="<?php echo $_categoryHelper->getCategoryUrl($_category) ?>">
+                            <h2 class="main-cat-tilte"><?php echo $_category->getName();?></h2>
+                        </a>
+						 <ul>
+						<?php 
+						$subcategory = $objectManager->create('Magento\Catalog\Model\Category')->load($_category->getId());           
+						$subcats = $subcategory->getChildrenCategories();
+						//$subcategory = $_categoriescollection->addAttributeToFilter('parent_id', $_category->getId());
+						foreach($subcats as $subcat){
+							 ?>
+							
+                            <li><a href="<?php echo $_categoryHelper->getCategoryUrl($subcat) ?>"><?php echo $subcat->getName();?></a></li>
+						<?php } ?>
+							
+						 </ul>
+                    </div>
+					<?php endforeach;?>
+                </div>
+				
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                    <!-- Banner -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/kit2pares_1.jpg'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/kit2pares_1.jpg'); ?>"></div>
+                        </div>
+                        <!-- Add Pagination 
+                        <div class="swiper-pagination"></div>-->
+                        
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- Brand Show -->
+                    <div class="swiper-container-brand bottom-margin top-margin margin-15">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/adidas.gif'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/dc.gif'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/flexi.gif'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/kswiss.gif'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/levis.gif'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/newbalance.gif'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/nike.gif'); ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo $this->getViewFileUrl('images/vans.gif'); ?>"></div>
+                        </div>
+                        <!-- Add Pagination 
+                        <div class="swiper-pagination"></div>-->
+                        
+                        <!-- Add Arrows 
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>-->
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="cat-container margin-15">
+                       
+						<?php 
+					  if($_categories->getSize()){
+							foreach ($_categories as $_category):  
+						if (!$_category->getIsActive()) {
+						continue;
+							}?>
+					   <?php
+						$subcategory = $objectManager->create('Magento\Catalog\Model\Category')->load($_category->getId());
+						$subcats = $subcategory->getChildrenCategories();
+						if($subcats->getSize()){?>
+								<h2 class="cat-individual-title"><span>-</span><?php echo $_category->getName(); ?><span>-</span></h2>
+							<?php foreach($subcats as $subcat){
+								$_subcategoryinfo = $objectManager->create('Magento\Catalog\Model\Category')->load($subcat->getId());
+								 ?>
+                        <div class="col-md-4 col-sm-4 col-xs-6">
+                            <div class="clearfix"></div>
+                            <div class="sub-cat-image-container">
+							<a href="<?php echo $_categoryHelper->getCategoryUrl($subcat) ?>">
+                                <img src="<?php echo $_subcategoryinfo->getImageUrl()?>" alt="<?php echo $subcat->getName();?>"/>
+                                <div class="overlay">
+                                    <div class="text"><img src="<?php echo $this->getViewFileUrl('images/link-interface-symbol.png'); ?>"></div>
+                                </div>
+								</a>
+                            </div> 
+                            <div class="clearfix"></div>
+                            <p class="sub-title"><?php echo $subcat->getName();?></p>
+                        </div>
+						<?php }
+						}else{
+							if(empty($_subcategoryinfo)){?>
+								<div class="col-md-4 col-sm-4 col-xs-6">
+                            <div class="clearfix"></div>
+                            <div class="sub-cat-image-container">
+							<a href="<?php echo $_categoryHelper->getCategoryUrl($_category); ?>">
+                                <img src="<?php echo $_category->getImageUrl()?>" alt="<?php echo $_category->getName();?>"/>
+                                <div class="overlay">
+                                    <div class="text"><img src="<?php echo $this->getViewFileUrl('images/link-interface-symbol.png'); ?>"></div>
+                                </div>
+								</a>
+                            </div> 
+                            <div class="clearfix"></div>
+                            <p class="sub-title"><?php echo $_category->getName();?></p>
+                        </div>
+						<?php	}
+						} endforeach; 
+					}else{?>
+						<div class="message info empty"><div>We can't find category matching the selection.</div></div>
+				   <?php }?>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
