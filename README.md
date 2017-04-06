@@ -1,2 +1,0 @@
-# Priceshoes
-Repository for PriceShoes
