@@ -90,35 +90,35 @@
 							<?php foreach($subcats as $subcat){
 								$_subcategoryinfo = $objectManager->create('Magento\Catalog\Model\Category')->load($subcat->getId());
 								 ?>
-                        <div class="col-md-4 col-sm-4 col-xs-6">
-                            <div class="clearfix"></div>
-                            <div class="sub-cat-image-container">
-							<a href="<?php echo $_categoryHelper->getCategoryUrl($subcat) ?>">
-                                <img src="<?php echo $_subcategoryinfo->getImageUrl()?>" alt="<?php echo $subcat->getName();?>"/>
-                                <div class="overlay">
-                                    <div class="text"><img src="<?php echo $this->getViewFileUrl('images/link-interface-symbol.png'); ?>"></div>
-                                </div>
-								</a>
-                            </div> 
-                            <div class="clearfix"></div>
-                            <p class="sub-title"><?php echo $subcat->getName();?></p>
-                        </div>
+							<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="clearfix"></div>
+								<div class="sub-cat-image-container">
+								<a href="<?php echo $_categoryHelper->getCategoryUrl($subcat) ?>">
+									<img src="<?php echo $_subcategoryinfo->getImageUrl()?>" alt="<?php echo $subcat->getName();?>"/>
+									<div class="overlay">
+										<div class="text"><img src="<?php echo $this->getViewFileUrl('images/link-interface-symbol.png'); ?>"></div>
+									</div>
+									</a>
+								</div> 
+								<div class="clearfix"></div>
+								<p class="sub-title"><?php echo $subcat->getName();?></p>
+							</div>
 						<?php }
 						}else{
 							if(empty($_subcategoryinfo)){?>
 								<div class="col-md-4 col-sm-4 col-xs-6">
-                            <div class="clearfix"></div>
-                            <div class="sub-cat-image-container">
-							<a href="<?php echo $_categoryHelper->getCategoryUrl($_category); ?>">
-                                <img src="<?php echo $_category->getImageUrl()?>" alt="<?php echo $_category->getName();?>"/>
-                                <div class="overlay">
-                                    <div class="text"><img src="<?php echo $this->getViewFileUrl('images/link-interface-symbol.png'); ?>"></div>
-                                </div>
-								</a>
-                            </div> 
-                            <div class="clearfix"></div>
-                            <p class="sub-title"><?php echo $_category->getName();?></p>
-                        </div>
+									<div class="clearfix"></div>
+									<div class="sub-cat-image-container">
+									<a href="<?php echo $_categoryHelper->getCategoryUrl($_category); ?>">
+										<img src="<?php echo $_category->getImageUrl()?>" alt="<?php echo $_category->getName();?>"/>
+										<div class="overlay">
+											<div class="text"><img src="<?php echo $this->getViewFileUrl('images/link-interface-symbol.png'); ?>"></div>
+										</div>
+										</a>
+									</div> 
+									<div class="clearfix"></div>
+									<p class="sub-title"><?php echo $_category->getName();?></p>
+							</div>
 						<?php	}
 						} endforeach; 
 					}else{?>
